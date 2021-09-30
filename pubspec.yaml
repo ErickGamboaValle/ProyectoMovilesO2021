@@ -63,8 +63,8 @@ flutter:
   - assets/pinkgold.png
   - assets/wp6707020.jpg
   - assets/wp6707078.jpg
-  - assets/icon_apple.png
-  - assets/icon_google.png
+  - assets/applepink.png
+  - assets/googlepink.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

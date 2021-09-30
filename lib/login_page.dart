@@ -1,15 +1,16 @@
 // ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class homepage extends StatefulWidget {
-  homepage({Key? key}) : super(key: key);
+class loginpage extends StatefulWidget {
+  loginpage({Key? key}) : super(key: key);
 
   @override
-  _homepageState createState() => _homepageState();
+  _loginpageState createState() => _loginpageState();
 }
 
-class _homepageState extends State<homepage> {
+class _loginpageState extends State<loginpage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -53,9 +54,10 @@ class _homepageState extends State<homepage> {
                           ),
                           child: IconButton(
                             onPressed: () {
-                              print("hola google");
+                              print(
+                                  "hola google"); //falta implementar el login de google
                             },
-                            icon: Image.asset('assets/icon_google.png'),
+                            icon: Image.asset('assets/googlepink.png'),
                           ),
                         ),
                       ],
@@ -85,9 +87,10 @@ class _homepageState extends State<homepage> {
                       ),
                       child: IconButton(
                         onPressed: () {
-                          print("hola apple");
+                          print(
+                              "hola apple"); //falta implementar el login de apple
                         },
-                        icon: Image.asset('assets/icon_apple.png'),
+                        icon: Image.asset('assets/applepink.png'),
                       ),
                     ),
                   ],
