@@ -1,4 +1,6 @@
 // ignore_for_file: prefer_const_constructors
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,13 +17,13 @@ class _homePageTeacherState extends State<homePageTeacher> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.pink[200],
-          title: Text("Bienvenido profesor"),
+          backgroundColor: Color(0xFFFFCDD2),
+          title: Text("Welcome, NAME", style: TextStyle(color: Colors.black)),
           actions: <Widget>[
             IconButton(
               icon: Icon(
-                Icons.settings,
-                color: Colors.white,
+                Icons.person,
+                color: Colors.black,
               ),
               onPressed: () {
                 // do something
@@ -29,8 +31,8 @@ class _homePageTeacherState extends State<homePageTeacher> {
             ),
             IconButton(
               icon: Icon(
-                Icons.settings,
-                color: Colors.white,
+                Icons.history,
+                color: Colors.black,
               ),
               onPressed: () {
                 // do something
@@ -40,11 +42,16 @@ class _homePageTeacherState extends State<homePageTeacher> {
         ),
         body: Container(
           padding: EdgeInsets.only(left: 5, right: 5),
-          //aqui va la imagen de fondo
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/wp6707078.jpg"), fit: BoxFit.cover),
-          ),
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: const [
+              Colors.transparent,
+              Color(0xFFFFCDD2),
+              Colors.black,
+            ],
+          )),
           child: ListView(
             children: [
               SizedBox(
@@ -56,52 +63,10 @@ class _homePageTeacherState extends State<homePageTeacher> {
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 selected: true,
-                selectedTileColor: Colors.grey[300],
+                selectedTileColor: Color(0xFFFFCDD2),
                 leading: CircleAvatar(
                   //aqui va la imagen de Java
-                  child: Text(
-                    "img Java",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                  backgroundColor: Colors.transparent,
-                ),
-                title: Center(
-                  child: Text(
-                    "Java",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                trailing: CircleAvatar(
-                  child: Icon(
-                    Icons.ac_unit,
-                    color: Colors.white,
-                  ),
-                  backgroundColor: Colors.pink[200],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              //python
-              ListTile(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                selected: true,
-                selectedTileColor: Colors.grey[300],
-                leading: CircleAvatar(
-                  //aqui va la imagen del python
-                  child: Text(
-                    "img Python",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
+                  child: Image.asset('assets/py.png'),
                   backgroundColor: Colors.transparent,
                 ),
                 title: Center(
@@ -109,61 +74,27 @@ class _homePageTeacherState extends State<homePageTeacher> {
                     "Python",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                 ),
                 trailing: CircleAvatar(
                   child: Icon(
-                    Icons.access_alarm,
-                    color: Colors.white,
+                    Icons.arrow_forward,
+                    color: Colors.black,
                   ),
-                  backgroundColor: Colors.pink[200],
+                  backgroundColor: Colors.transparent,
                 ),
               ),
               SizedBox(
                 height: 10,
               ),
-              //linux
-              ListTile(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                selected: true,
-                selectedTileColor: Colors.grey[300],
-                leading: CircleAvatar(
-                  //aqui va la imagen de linux
-                  child: Text(
-                    "img Linux",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                  backgroundColor: Colors.transparent,
-                ),
-                title: Center(
-                  child: Text(
-                    "Linux",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                trailing: CircleAvatar(
-                  child: Icon(
-                    Icons.adb,
-                    color: Colors.white,
-                  ),
-                  backgroundColor: Colors.pink[200],
-                ),
-              ),
             ],
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          backgroundColor: Colors.pink[200],
+          child: Icon(Icons.add, color: Colors.black),
+          backgroundColor: Color(0xFFFFCDD2),
           onPressed: () {},
         ),
       ),

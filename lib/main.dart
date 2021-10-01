@@ -12,9 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //return loginpage();
-    return homePageAlumn();
     //return homePageTeacher();
-    //return userProfile();
+    return userProfile();
     //return userSummary();
   }
 }

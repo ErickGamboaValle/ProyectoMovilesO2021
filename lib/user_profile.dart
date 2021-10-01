@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_const
+
 import 'package:flutter/material.dart';
 
 class userProfile extends StatefulWidget {
@@ -13,21 +15,88 @@ class _userProfileState extends State<userProfile> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Perfil de usuario"),
-          backgroundColor: Colors.pink[200],
+          backgroundColor: Color(0xFFFFCDD2),
+          title: Text("Your profile", style: TextStyle(color: Colors.black)),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(
+                Icons.home,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                // do something
+              },
+            ),
+            IconButton(
+              icon: const Icon(
+                Icons.history,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                // do something
+              },
+            )
+          ],
         ),
         body: Container(
-          padding: EdgeInsets.only(left: 5, right: 5),
-          //aqui va la imagen de fondo
-          // decoration: const BoxDecoration(
-          //   image: DecorationImage(
-          //       image: AssetImage("assets/wp6707020.jpg"), fit: BoxFit.cover),
-          // ),
-          //aqui se van a mostrar todos los datos del usuario
-          child: ListView(
-            children: [
-              Text("Perfil del usuario")
-            ], //aqui se van a mostrar todos los datos del usuario
+          padding: const EdgeInsets.only(left: 5, right: 5),
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              Colors.transparent,
+              Color(0xFFFFCDD2),
+              Colors.black,
+            ],
+          )),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  width: 300.0,
+                  height: 300.0,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: const DecorationImage(
+                          fit: BoxFit.cover,
+                          image: const AssetImage('assets/kendalljenner.jpg'))),
+                ),
+                SizedBox(height: 30),
+                const Text("Kendall Jenner",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontFamily: 'OpenSans',
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.bold)),
+                SizedBox(height: 30.0),
+                Text("Email: kjenner@icloud.com",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'OpenSans',
+                    )),
+                Text("Phone: 3321309901",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'OpenSans',
+                    )),
+                Text("Birthdate: October 23, 1997",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'OpenSans',
+                    )),
+                Text("Gender: Female",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'OpenSans',
+                    )),
+              ],
+            ),
           ),
         ),
       ),
