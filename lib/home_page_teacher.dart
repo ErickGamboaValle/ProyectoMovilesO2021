@@ -26,7 +26,7 @@ class _homePageTeacherState extends State<homePageTeacher> {
                 color: Colors.black,
               ),
               onPressed: () {
-                // do something
+                // Ir al perfil del usuario
               },
             ),
             IconButton(
@@ -35,7 +35,7 @@ class _homePageTeacherState extends State<homePageTeacher> {
                 color: Colors.black,
               ),
               onPressed: () {
-                // do something
+                // Regresar al home
               },
             )
           ],

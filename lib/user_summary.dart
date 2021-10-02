@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class userSummary extends StatefulWidget {
@@ -13,19 +15,90 @@ class _userSummaryState extends State<userSummary> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Resumen del usuario"),
-          backgroundColor: Colors.pink[200],
+          backgroundColor: Color(0xFFFFCDD2),
+          title: Text(
+            "Grades",
+            style: TextStyle(color: Colors.black),
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.person,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                // Ir al perfil de usuario
+              },
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.home,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                // Regresar al Home
+              },
+            )
+          ],
         ),
         body: Container(
           padding: EdgeInsets.only(left: 5, right: 5),
           //aqui va la imagen de fondo
-          // decoration: const BoxDecoration(
-          //   image: DecorationImage(
-          //       image: AssetImage("assets/wp6707020.jpg"), fit: BoxFit.cover),
-          // ),
-          //aqui se van a mostrar todos los examenes del usuario
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [
+                Colors.transparent,
+                Color(0xFFFFCDD2),
+                Colors.black,
+              ],
+            ),
+          ),
           child: ListView(
-            children: [Text("Resumen del usuario")],
+            children: [
+              SizedBox(
+                height: 10,
+              ),
+              //JAVA
+              ListTile(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                selected: true,
+                selectedTileColor: Color(0xFFFFCDD2),
+                leading: CircleAvatar(
+                  //aqui va la imagen de Java
+                  child: Image.asset('assets/py.png'),
+                  backgroundColor: Colors.transparent,
+                ),
+                title: Center(
+                  child: Text(
+                    "Python",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                subtitle: Center(
+                  child: Text(
+                    "Grade: 83",
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+                trailing: CircleAvatar(
+                  child: Icon(
+                    Icons.file_download,
+                    color: Colors.black,
+                  ),
+                  backgroundColor: Colors.transparent,
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+            ],
           ),
         ),
       ),

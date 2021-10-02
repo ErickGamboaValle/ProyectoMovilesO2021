@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_const
+// ignore_for_file: unnecessary_const, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
