@@ -1,3 +1,5 @@
+# School project. NOT recommended for industry purposes.
+
 # proyecto_final
 
 A new Flutter project.
