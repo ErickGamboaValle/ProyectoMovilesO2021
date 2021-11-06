@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
-import 'package:google_fonts/google_fonts.dart';
-import 'package:platform/platform.dart';
-import 'package:proyecto_final/home/home_page_teacher.dart';
+//import 'package:google_fonts/google_fonts.dart';
+//import 'package:platform/platform.dart';
+import 'package:proyecto_final/home/homePage.dart';
 import 'package:proyecto_final/login/bloc/login_bloc.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 import 'dart:io' show Platform;
@@ -129,7 +129,7 @@ class _loginpageState extends State<loginpage> {
             },
             builder: (context, state) {
               if (state is LoginSuccessState) {
-                return homePageTeacher();
+                return homePage();
               }
               return Container(
                 decoration: const BoxDecoration(

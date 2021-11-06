@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:proyecto_final/profile/user_profile.dart';
+
+import 'home/homePage.dart';
 
 class userSummary extends StatefulWidget {
   userSummary({Key? key}) : super(key: key);
@@ -28,6 +31,10 @@ class _userSummaryState extends State<userSummary> {
               ),
               onPressed: () {
                 // Ir al perfil de usuario
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => userProfile()),
+                );
               },
             ),
             IconButton(
@@ -37,6 +44,10 @@ class _userSummaryState extends State<userSummary> {
               ),
               onPressed: () {
                 // Regresar al Home
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => homePage()),
+                );
               },
             )
           ],
