@@ -1,0 +1,88 @@
+[
+    {
+        "0": "Output of x if x = 36 / 4 * (3 +  2) * 4 + 2?",
+        "1": "What is output of str[1:3] if str = 'pynative'?",
+        "2": "What is the output of print(var) if var = 'James' * 2  * 3?",
+        "3": "Which operator has higher precedence in the following list?",
+        "4": "What is the output of: for x in range(0.5, 5.5, 0.5) print(x)?",
+        "5": "What will be the output of the following code? a = p * 3, print(a)",
+        "6": "Which function finds out the variable type in Python?",
+        "7": "Which of the following keyword is used to define a function in Python?",
+        "8": "Which of the following is a print function in Python?",
+        "9": "What is the output of the following code? for i in range(10, 15, 1) print( i, end=', ')"
+    },
+    {
+        "0": {
+            "a": "182.0",
+            "b": "37",
+            "c": "117",
+            "d": "The Program executed with errors"
+        },
+        "1": {
+            "a": "py",
+            "b": "yn",
+            "c": "pyn",
+            "d": "yna"
+        },
+        "2": {
+            "a": "'James' * 6",
+            "b": "Error: invalid syntax",
+            "c": "JamesJamesJamesJamesJames",
+            "d": "JamesJamesJamesJamesJamesJames"
+        },
+        "3": {
+            "a": "% (Modulus)",
+            "b": "& (BitWise AND)",
+            "c": "** (Exponent)",
+            "d": "> (Comparison)"
+        },
+        "4": {
+            "a": "[0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5]",
+            "b": "[0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]",
+            "c": "Error: invalid syntax",
+            "d": "The Program executed with errors"
+        },
+        "5": {
+            "a": "pp",
+            "b": "ppp",
+            "c": "3p",
+            "d": "p3"
+        },
+        "6": {
+            "a": "typedef",
+            "b": "typeof",
+            "c": "type",
+            "d": "find"
+        },
+        "7": {
+            "a": "func",
+            "b": "def",
+            "c": "void",
+            "d": "function"
+        },
+        "8": {
+            "a": "cout",
+            "b": "print",
+            "c": "println",
+            "d": "stderr"
+        },
+        "9": {
+            "a": "10, 11, 12, 13, 14,",
+            "b": "Error: invalid syntax",
+            "c": "null",
+            "d": "10, 11, 12, 13, 14, 15,"
+        }
+    },
+    {
+        "0": "182.0",
+        "1": "yn",
+        "2": "JamesJamesJamesJamesJamesJames",
+        "3": "** (Exponent)",
+        "4": "The Program executed with errors",
+        "5": "ppp",
+        "6": "type",
+        "7": "def",
+        "8": "print",
+        "9": "10, 11, 12, 13, 14,"
+    }
+]

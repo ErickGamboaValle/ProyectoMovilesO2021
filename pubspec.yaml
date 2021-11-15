@@ -1,6 +1,6 @@
 name: proyecto_final
 description: A new Flutter project.
-publish_to: "none" 
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
@@ -33,16 +33,17 @@ dev_dependencies:
     sdk: flutter
 
   firebase_analytics: ^8.3.3
- 
+
   flutter_lints: ^1.0.0
 
 flutter:
   uses-material-design: true
   assets:
-    - assets/pinkgold.png
-    - assets/loginBackground.jpg
-    - assets/wp6707078.jpg
-    - assets/appleLogin.png
-    - assets/googleLogin.png
-    - assets/py.png
-    - assets/kendalljenner.jpg
+    - assets/images/pinkgold.png
+    - assets/images/loginBackground.jpg
+    - assets/images/wp6707078.jpg
+    - assets/images/appleLogin.png
+    - assets/images/googleLogin.png
+    - assets/images/py.png
+    - assets/images/kendalljenner.jpg
+    - assets/quizz/Python.json

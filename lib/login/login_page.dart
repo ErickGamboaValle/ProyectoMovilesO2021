@@ -3,8 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
-//import 'package:google_fonts/google_fonts.dart';
-//import 'package:platform/platform.dart';
 import 'package:proyecto_final/home/homePage.dart';
 import 'package:proyecto_final/login/bloc/login_bloc.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
@@ -134,7 +132,7 @@ class _loginpageState extends State<loginpage> {
               return Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/loginBackground.jpg"),
+                      image: AssetImage("assets/images/loginBackground.jpg"),
                       fit: BoxFit.cover),
                 ),
                 /*****************************Login*****************************/
@@ -214,7 +212,8 @@ class _loginpageState extends State<loginpage> {
                                   // agregar evento al login bloc
                                   _loginBloc.add(LoginWithGoogleEvent());
                                 },
-                                icon: Image.asset('assets/googleLogin.png'),
+                                icon: Image.asset(
+                                    'assets/images/googleLogin.png'),
                               ),
                             ),
                             SizedBox(
@@ -296,7 +295,8 @@ class _loginpageState extends State<loginpage> {
                                   // and you can now set this as the app's session
                                   print(session);
                                 },
-                                icon: Image.asset('assets/appleLogin.png'),
+                                icon:
+                                    Image.asset('assets/images/appleLogin.png'),
                               ),
                             )
                           ],

@@ -1,12 +1,12 @@
 // ignore_for_file: prefer_const_constructors, file_names
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:proyecto_final/auth/bloc/auth_bloc.dart';
 import 'package:proyecto_final/home/bloc/home_bloc.dart';
 import 'package:proyecto_final/profile/user_profile.dart';
-import 'package:proyecto_final/user_summary.dart';
+import 'package:proyecto_final/quizz/quizpage.dart';
+import 'package:proyecto_final/summary/user_summary.dart';
 
 class homePage extends StatefulWidget {
   homePage({Key? key}) : super(key: key);
@@ -14,7 +14,6 @@ class homePage extends StatefulWidget {
   @override
   _homePageState createState() => _homePageState();
 }
-
 class _homePageState extends State<homePage> {
   @override
   Widget build(BuildContext context) {
@@ -118,8 +117,16 @@ class _homePageState extends State<homePage> {
                               ),
                             ),
                             trailing: CircleAvatar(
-                              child: Icon(
-                                Icons.arrow_forward,
+                              child: IconButton(
+                                icon: Icon(Icons.arrow_forward),
+                                onPressed: () => {
+                                  print("${state.examsList[index]["name"]}"),
+                                  Navigator.of(context)
+                                      .pushReplacement(MaterialPageRoute(
+                                    builder: (context) => getjson(
+                                        "${state.examsList[index]["name"]}"),
+                                  ))
+                                },
                                 color: Colors.black,
                               ),
                               backgroundColor: Colors.transparent,
@@ -139,46 +146,6 @@ class _homePageState extends State<homePage> {
                     ),
                   ),
                 );
-                //////////////////////////////////////////////////////////////////////////
-                /*return ListView(
-                        children: [
-                          SizedBox(
-                            height: 10,
-                          ),
-                          /////////////////////////////////////////////////////////////////////
-                          ListTile(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20.0),
-                            ),
-                            selected: true,
-                            selectedTileColor: Color(0xFFFFCDD2),
-                            leading: CircleAvatar(
-                              child: Image.asset('assets/py.png'),
-                              backgroundColor: Colors.transparent,
-                            ),
-                            title: Center(
-                              child: Text(
-                                "Python",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
-                            trailing: CircleAvatar(
-                              child: Icon(
-                                Icons.arrow_forward,
-                                color: Colors.black,
-                              ),
-                              backgroundColor: Colors.transparent,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          //////////////////////////////////////////////////////////////////////
-                        ],
-                      ); */
               },
             ),
           ),

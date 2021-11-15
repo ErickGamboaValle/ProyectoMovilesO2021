@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/profile/user_profile.dart';
 
-import 'home/homePage.dart';
+import '../home/homePage.dart';
 
 class userSummary extends StatefulWidget {
   userSummary({Key? key}) : super(key: key);
