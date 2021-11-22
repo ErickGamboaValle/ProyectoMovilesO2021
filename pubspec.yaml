@@ -45,5 +45,7 @@ flutter:
     - assets/images/appleLogin.png
     - assets/images/googleLogin.png
     - assets/images/py.png
+    - assets/images/bad.png
+    - assets/images/good.png
     - assets/images/kendalljenner.jpg
     - assets/quizz/Python.json

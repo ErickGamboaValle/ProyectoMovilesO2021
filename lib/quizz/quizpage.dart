@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_final/quizz/resultpage.dart';
 
 class getjson extends StatelessWidget {
-  String? langname;
+  String langname;
   getjson(this.langname);
   String? assettoload;
 
@@ -18,7 +18,7 @@ class getjson extends StatelessWidget {
       builder: (context, snapshot) {
         List? mydata = json.decode(snapshot.data.toString());
         if (mydata == null) {
-          return Scaffold(
+          return const Scaffold(
             body: Center(
               child: Text(
                 "Loading",
@@ -26,8 +26,8 @@ class getjson extends StatelessWidget {
             ),
           );
         } else {
-          print(mydata);
-          return quizpage(mydata: mydata);
+          //print(mydata);
+          return quizpage(mydata: mydata, langname: langname);
         }
       },
     );
@@ -36,21 +36,22 @@ class getjson extends StatelessWidget {
 
 class quizpage extends StatefulWidget {
   final List mydata;
-
-  quizpage({Key? key, required this.mydata}) : super(key: key);
+  String langname;
+  quizpage({Key? key, required this.mydata, required this.langname}) : super(key: key);
   @override
-  _quizpageState createState() => _quizpageState(mydata);
+  _quizpageState createState() => _quizpageState(mydata, langname);
 }
 
 class _quizpageState extends State<quizpage> {
   final List mydata;
-  _quizpageState(this.mydata);
+  String langname;
+  _quizpageState(this.mydata, this.langname);
 
-  Color colortoshow = Colors.indigoAccent;
-  Color right = Colors.green;
-  Color wrong = Colors.red;
+  Color colortoshow = const Color(0xFFFFCDD2);
+  Color right = Colors.green.shade200;
+  Color wrong = Colors.black;
   int marks = 0;
-  int i = 1;
+  int i = 0;
   bool disableAnswer = false;
   // extra varibale to iterate
   int j = 1;
@@ -70,11 +71,13 @@ class _quizpageState extends State<quizpage> {
   genrandomarray() {
     var distinctIds = [];
     var rand = new Random();
-    for (int i = 0;;) {
-      distinctIds.add(rand.nextInt(10));
-      random_array = distinctIds.toSet().toList();
+    for (int i = 0; i < 10; i++) {
+      distinctIds.add(i);
+      //distinctIds.add(rand.nextInt(10));
+      //random_array = distinctIds.toSet().toList();
+      random_array = distinctIds;
       if (random_array.length < 10) {
-        print(i);
+        //print(i);
         continue;
       } else {
         break;
@@ -115,6 +118,7 @@ class _quizpageState extends State<quizpage> {
     });
   }
 
+  //String langname = langname;
   void nextquestion() {
     canceltimer = false;
     timer = 30;
@@ -123,8 +127,10 @@ class _quizpageState extends State<quizpage> {
         i = random_array[j];
         j++;
       } else {
+        print(answers.toString());
+        print(langname);
         Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => resultpage(marks: marks),
+          builder: (context) => resultpage(marks: marks, answers: answers, langname: langname),
         ));
       }
       btncolor["a"] = const Color(0xFFFFCDD2);
@@ -136,9 +142,11 @@ class _quizpageState extends State<quizpage> {
     starttimer();
   }
 
+  var answers = [];
   void checkanswer(String k) {
+    answers.add(mydata[2][i.toString()]);
     if (mydata[2][i.toString()] == mydata[1][i.toString()][k]) {
-      marks = marks + 5;
+      marks = marks + 10;
       colortoshow = right;
     } else {
       colortoshow = wrong;
@@ -183,14 +191,11 @@ class _quizpageState extends State<quizpage> {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              title: Text(
-                "Quizstar",
-              ),
               content: Text("You Can't Go Back At This Stage."),
               actions: <Widget>[
-                FlatButton(
+                ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    //Navigator.of(context).pop();
                   },
                   child: Text(
                     'Ok',
@@ -208,56 +213,70 @@ class _quizpageState extends State<quizpage> {
         return redirectTo();
       },
       child: Scaffold(
-        body: Column(
-          children: <Widget>[
-            Expanded(
-              flex: 3,
-              child: Container(
-                padding: EdgeInsets.all(15.0),
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  mydata[0][i.toString()],
-                  style: const TextStyle(
-                    fontSize: 16.0,
-                    fontFamily: "Quando",
-                  ),
-                ),
-              ),
+        body: Container(
+          padding: EdgeInsets.only(left: 5, right: 5),
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Colors.transparent,
+                Color(0xFFFFCDD2),
+                Colors.black,
+              ],
             ),
-            Expanded(
-              flex: 6,
-              child: AbsorbPointer(
-                absorbing: disableAnswer,
+          ),
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                flex: 3,
                 child: Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      choicebutton('a'),
-                      choicebutton('b'),
-                      choicebutton('c'),
-                      choicebutton('d'),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                alignment: Alignment.topCenter,
-                child: Center(
+                  padding: EdgeInsets.all(15.0),
+                  alignment: Alignment.bottomCenter,
                   child: Text(
-                    showtimer,
-                    style: TextStyle(
-                      fontSize: 35.0,
-                      fontWeight: FontWeight.w700,
-                      fontFamily: 'Times New Roman',
+                    mydata[0][i.toString()],
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      fontFamily: "Quando",
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+              Expanded(
+                flex: 6,
+                child: AbsorbPointer(
+                  absorbing: disableAnswer,
+                  child: Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        choicebutton('a'),
+                        choicebutton('b'),
+                        choicebutton('c'),
+                        choicebutton('d'),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  alignment: Alignment.topCenter,
+                  child: Center(
+                    child: Text(
+                      showtimer,
+                      style: TextStyle(
+                        fontSize: 35.0,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Times New Roman',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
