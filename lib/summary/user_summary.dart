@@ -80,7 +80,7 @@ class _userSummaryState extends State<userSummary> {
                 selectedTileColor: Color(0xFFFFCDD2),
                 leading: CircleAvatar(
                   //aqui va la imagen de Java
-                  child: Image.asset('assets/py.png'),
+                  child: Image.asset('assets/images/py.png'),
                   backgroundColor: Colors.transparent,
                 ),
                 title: Center(
