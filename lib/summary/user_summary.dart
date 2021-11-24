@@ -21,8 +21,21 @@ class _userSummaryState extends State<userSummary> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFFFFCDD2),
-          title: Text("Welcome!", style: TextStyle(color: Colors.black)),
+          title: Text("Grades", style: TextStyle(color: Colors.black)),
           actions: <Widget>[
+            IconButton(
+              icon: const Icon(
+                Icons.home,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                // do something
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => homePage()),
+                );
+              },
+            ),
             IconButton(
               icon: Icon(
                 Icons.person,
@@ -33,18 +46,6 @@ class _userSummaryState extends State<userSummary> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => userProfile()),
-                );
-              },
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.history,
-                color: Colors.black,
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => userSummary()),
                 );
               },
             ),
@@ -99,11 +100,17 @@ class _userSummaryState extends State<userSummary> {
                             ),
                             title: Center(
                               child: Text(
-                                "${state.gradresList}",
+                                "${state.gradresList.keys.toList()[index]}",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black,
                                 ),
+                              ),
+                            ),
+                            subtitle: Center(
+                              child: Text(
+                                "Grade: ${state.gradresList.values.toList()[index]}",
+                                style: TextStyle(color: Colors.black),
                               ),
                             ),
                             trailing: CircleAvatar(

@@ -26,7 +26,10 @@ class SummaryBloc extends Bloc<SummaryEvent, SummaryState> {
 
   Future<Map<String, dynamic>?> _getExams() async {
     try {
-      var grades = await _cFirestore.collection("UserProfile").doc("${auth.currentUser!.uid}").get();
+      var grades = await _cFirestore
+          .collection("UserProfile")
+          .doc("${auth.currentUser!.uid}")
+          .get();
       return grades.get("Grades");
       /*var exams = await _cFirestore.collection("UserProfile").get();
       return exams.docs
@@ -39,5 +42,5 @@ class SummaryBloc extends Bloc<SummaryEvent, SummaryState> {
       print(e.toString());
       return null;
     }
-  }     
+  }
 }
