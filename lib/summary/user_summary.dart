@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:proyecto_final/profile/user_profile.dart';
+import 'package:proyecto_final/summary/bloc/summary_bloc.dart';
 
 import '../home/homePage.dart';
 
@@ -19,10 +21,7 @@ class _userSummaryState extends State<userSummary> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFFFFCDD2),
-          title: Text(
-            "Grades",
-            style: TextStyle(color: Colors.black),
-          ),
+          title: Text("Welcome!", style: TextStyle(color: Colors.black)),
           actions: <Widget>[
             IconButton(
               icon: Icon(
@@ -30,7 +29,7 @@ class _userSummaryState extends State<userSummary> {
                 color: Colors.black,
               ),
               onPressed: () {
-                // Ir al perfil de usuario
+                // Ir al perfil del usuario
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => userProfile()),
@@ -39,79 +38,105 @@ class _userSummaryState extends State<userSummary> {
             ),
             IconButton(
               icon: Icon(
-                Icons.home,
+                Icons.history,
                 color: Colors.black,
               ),
               onPressed: () {
-                // Regresar al Home
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => homePage()),
+                  MaterialPageRoute(builder: (context) => userSummary()),
                 );
               },
-            )
+            ),
           ],
         ),
-        body: Container(
-          padding: EdgeInsets.only(left: 5, right: 5),
-          //aqui va la imagen de fondo
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [
-                Colors.transparent,
-                Color(0xFFFFCDD2),
-                Colors.black,
-              ],
-            ),
-          ),
-          child: ListView(
-            children: [
-              SizedBox(
-                height: 10,
+        body: BlocProvider(
+          create: (context) => SummaryBloc()..add(RequestDataEvent()),
+          //Background
+          child: Container(
+            padding: EdgeInsets.only(left: 5, right: 5),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: const [
+                  Colors.transparent,
+                  Color(0xFFFFCDD2),
+                  Colors.black,
+                ],
               ),
-              //JAVA
-              ListTile(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                selected: true,
-                selectedTileColor: Color(0xFFFFCDD2),
-                leading: CircleAvatar(
-                  //aqui va la imagen de Java
-                  child: Image.asset('assets/images/py.png'),
-                  backgroundColor: Colors.transparent,
-                ),
-                title: Center(
+            ),
+            //Elements
+            child: BlocConsumer<SummaryBloc, SummaryState>(
+              listener: (context, state) {
+                if (state is NoDataState) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text("No se encontraron datos..."),
+                  ));
+                }
+              },
+              builder: (context, state) {
+                if (state is LoadingState) {
+                  return Center(child: CircularProgressIndicator());
+                } else if (state is ExistingDataState) {
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 8, bottom: 8),
+                    child: ListView.builder(
+                      itemCount: state.gradresList.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(top: 8, bottom: 8),
+                          child: ListTile(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            selected: true,
+                            selectedTileColor: Color(0xFFFFCDD2),
+                            leading: CircleAvatar(
+                              child: Image(
+                                  image: AssetImage("assets/images/check.png")),
+                              backgroundColor: Colors.transparent,
+                            ),
+                            title: Center(
+                              child: Text(
+                                "${state.gradresList}",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            trailing: CircleAvatar(
+                              child: Icon(
+                                Icons.file_download,
+                                color: Colors.black,
+                              ),
+                              backgroundColor: Colors.transparent,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  );
+                }
+                return Center(
                   child: Text(
-                    "Python",
+                    "No hay datos que mostrar aun...",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
                   ),
-                ),
-                subtitle: Center(
-                  child: Text(
-                    "Grade: 83",
-                    style: TextStyle(color: Colors.black),
-                  ),
-                ),
-                trailing: CircleAvatar(
-                  child: Icon(
-                    Icons.file_download,
-                    color: Colors.black,
-                  ),
-                  backgroundColor: Colors.transparent,
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-            ],
+                );
+              },
+            ),
           ),
         ),
+        /*floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add, color: Colors.black),
+          backgroundColor: Color(0xFFFFCDD2),
+          onPressed: () {},
+        ), */
       ),
     );
   }

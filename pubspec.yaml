@@ -47,5 +47,6 @@ flutter:
     - assets/images/py.png
     - assets/images/bad.png
     - assets/images/good.png
+    - assets/images/check.png
     - assets/images/kendalljenner.jpg
     - assets/quizz/Python.json

@@ -30,7 +30,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
             (examDocument) =>
                 {"image": examDocument["image"], "name": examDocument["name"]},
           )
-          .toList();
+          .toList(); 
     } catch (e) {
       print(e.toString());
       return null;
