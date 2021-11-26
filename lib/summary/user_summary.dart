@@ -1,7 +1,10 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_field
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:proyecto_final/PDF/grade_export.dart';
 import 'package:proyecto_final/profile/user_profile.dart';
 import 'package:proyecto_final/summary/bloc/summary_bloc.dart';
 
@@ -18,43 +21,44 @@ class _userSummaryState extends State<userSummary> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color(0xFFFFCDD2),
-          title: Text("Grades", style: TextStyle(color: Colors.black)),
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(
-                Icons.home,
-                color: Colors.black,
+      home: BlocProvider(
+        create: (context) => SummaryBloc()..add(RequestDataEvent()),
+        child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Color(0xFFFFCDD2),
+            title: Text("Grades", style: TextStyle(color: Colors.black)),
+            actions: <Widget>[
+              IconButton(
+                icon: const Icon(
+                  Icons.home,
+                  color: Colors.black,
+                ),
+                onPressed: () {
+                  // do something
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => homePage()),
+                  );
+                },
               ),
-              onPressed: () {
-                // do something
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => homePage()),
-                );
-              },
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.person,
-                color: Colors.black,
+              IconButton(
+                icon: Icon(
+                  Icons.person,
+                  color: Colors.black,
+                ),
+                onPressed: () {
+                  // Ir al perfil del usuario
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => userProfile()),
+                  );
+                },
               ),
-              onPressed: () {
-                // Ir al perfil del usuario
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => userProfile()),
-                );
-              },
-            ),
-          ],
-        ),
-        body: BlocProvider(
-          create: (context) => SummaryBloc()..add(RequestDataEvent()),
-          //Background
-          child: Container(
+            ],
+          ),
+          body:
+              //Background
+              Container(
             padding: EdgeInsets.only(left: 5, right: 5),
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -113,13 +117,6 @@ class _userSummaryState extends State<userSummary> {
                                 style: TextStyle(color: Colors.black),
                               ),
                             ),
-                            trailing: CircleAvatar(
-                              child: Icon(
-                                Icons.file_download,
-                                color: Colors.black,
-                              ),
-                              backgroundColor: Colors.transparent,
-                            ),
                           ),
                         );
                       },
@@ -138,12 +135,18 @@ class _userSummaryState extends State<userSummary> {
               },
             ),
           ),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.download, color: Colors.black),
+            backgroundColor: Color(0xFFFFCDD2),
+            onPressed: () => {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => (gradesExport()),
+                ),
+              ),
+            },
+          ),
         ),
-        /*floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add, color: Colors.black),
-          backgroundColor: Color(0xFFFFCDD2),
-          onPressed: () {},
-        ), */
       ),
     );
   }

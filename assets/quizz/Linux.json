@@ -1,0 +1,88 @@
+[
+    {
+        "0": "What sign is used to erase or kill an entire line you have typed and start you are on a new line (but not display a new prompt) ?",
+        "1": "What command is used to sort the lines of data in a file in alphabetical order ?",
+        "2": "What command is used with vi editor to save file and remain in the editing mode ?",
+        "3": "What command is used with vi editor to move back to the beginning of a word ?",
+        "4": "What command is used with vi editor to search a pattern in the forward direction ?",
+        "5": "What command is used to add printing jobs to the queue ?",
+        "6": "What protocol(s) is(are) allowed a user to retrieve her/his mail from the mail server to her/his mail reader ?",
+        "7": "What project is currently developing X server support ?",
+        "8": "What X-based tool is available for configuring the X Window system ?",
+        "9": ""
+    },
+    {
+        "0": {
+            "a": "@",
+            "b": "#",
+            "c": "$",
+            "d": "!"
+        },
+        "1": {
+            "a": "sort",
+            "b": "sh",
+            "c": "st",
+            "d": "sort -r"
+        },
+        "2": {
+            "a": ":q",
+            "b": ":w",
+            "c": "q!",
+            "d": "x"
+        },
+        "3": {
+            "a": "b",
+            "b": "a",
+            "c": "e",
+            "d": "w"
+        },
+        "4": {
+            "a": "/",
+            "b": "?",
+            "c": "//",
+            "d": "??"
+        },
+        "5": {
+            "a": "lpc",
+            "b": "lpq",
+            "c": "lpr",
+            "d": "lpd"
+        },
+        "6": {
+            "a": "MAP",
+            "b": "FTP",
+            "c": "POP3",
+            "d": "None of the above"
+        },
+        "7": {
+            "a": "RHAD Labs",
+            "b": "GNOME Project",
+            "c": "XFree886 Project, inc",
+            "d": "All of the above"
+        },
+        "8": {
+            "a": "XF86Setup",
+            "b": "xf86config",
+            "c": "XConfigurator",
+            "d": "None of the above"
+        },
+        "9": {
+            "a": "dns",
+            "b": "named",
+            "c": "shttp",
+            "d": "httpd"
+        }
+    },
+    {
+        "0": "@",
+        "1": "sort",
+        "2": ":w",
+        "3": "b",
+        "4": "/",
+        "5": "lpr",
+        "6": "POP3",
+        "7": "XFree86 Project, Inc.",
+        "8": "XF86Setup",
+        "9": "named"
+    }
+]

@@ -1,0 +1,88 @@
+[
+    {
+        "0": "What is a correct syntax to output 'Hello World' in Java?",
+        "1": "How do you insert COMMENTS in Java code?",
+        "2": "Which data type is used to create a variable that should store text?",
+        "3": "How do you create a variable with the numeric value 5?",
+        "4": "How do you create a variable with the floating number 2.8?",
+        "5": "Which method can be used to find the length of a string?",
+        "6": "Which method can be used to return a string in upper case letters?",
+        "7": "Which operator can be used to compare two values?",
+        "8": "To declare an array in Java, define the variable type with:",
+        "9": "Which keyword is used to create a class in Java?"
+    },
+    {
+        "0": {
+            "a": "print('Hello World');",
+            "b": "System.out.println('Hello World');",
+            "c": "Console.WriteLine('Hello World');",
+            "d": "echo('Hello World');"
+        },
+        "1": {
+            "a": "/*",
+            "b": "#",
+            "c": "//",
+            "d": "<!---->"
+        },
+        "2": {
+            "a": "myString",
+            "b": "String",
+            "c": "Txt",
+            "d": "string"
+        },
+        "3": {
+            "a": "int x = 5;",
+            "b": "float x = 5;",
+            "c": "num x = 5;",
+            "d": "x = 5;"
+        },
+        "4": {
+            "a": "x = 2.8f;",
+            "b": "int x = 2.8f;",
+            "c": "byte x = 2.8f;",
+            "d": "float x = 2.8f;"
+        },
+        "5": {
+            "a": "len();",
+            "b": "length();",
+            "c": "getLength();",
+            "d": "getSize();"
+        },
+        "6": {
+            "a": "upperCase();",
+            "b": "tuc();",
+            "c": "toUpperCase();",
+            "d": "touppercase();"
+        },
+        "7": {
+            "a": "><",
+            "b": "=",
+            "c": "<>",
+            "d": "=="
+        },
+        "8": {
+            "a": "{}",
+            "b": "[]",
+            "c": "()",
+            "d": "**"
+        },
+        "9": {
+            "a": "className",
+            "b": "class()",
+            "c": "class",
+            "d": "MyClass"
+        }
+    },
+    {
+        "0": "System.out.println('Hello World');",
+        "1": "//",
+        "2": "String",
+        "3": "int x = 5;",
+        "4": "float x = 2.8f;",
+        "5": "Length();",
+        "6": "toUpperCase()",
+        "7": "==",
+        "8": "{}",
+        "9": "class"
+    }
+]

@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "347104572147-5j5ook5kkmsjg5ofc7ppm8am97g9jhps.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iteso.proyecto_final",
+            "certificate_hash": "9fc874e5ce7d18337fb143b3870c1a9c3c6c727e"
+          }
+        },
+        {
           "client_id": "347104572147-vciqsbhs6hh0sim1848pvjv2hbpns93u.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

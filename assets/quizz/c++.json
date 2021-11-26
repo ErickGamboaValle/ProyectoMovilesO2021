@@ -1,0 +1,89 @@
+[
+    {
+        "0": "C++ is a __________ programming language.",
+        "1": "C++ designed by",
+        "2": "C++ was first appeared in",
+        "3": "C++ influenced by",
+        "4": "C++ influenced",
+        "5": "What is the filename extension of a C++ program ?",
+        "6": "C++ is an extension of C with a major addition of the class construct feature of",
+        "7": "C++ has the name _____ before it was changed to C++.",
+        "8": "_____ refer to the names of variables, functions, arrays, classes etc. created by the programmer.",
+        "9": "What is the correct value to return to the operating system upon the successful completion of a program ?"
+    },
+    {
+        "0": "All of the above",
+        "1": "Bjarne Stroustrup",
+        "2": "1985",
+        "3": "All the above",
+        "4": "All the above",
+        "5": ".cpp",
+        "6": "Simula67",
+        "7": "C with classes",
+        "8": "Identifiers",
+        "9": "0"
+    },
+    {
+        "0": {
+            "a": "general-purpose",
+            "b": "procedural and functional",
+            "c": "object-oriented, generic, and modular",
+            "d": "All the above"
+        },
+        "1": {
+            "a": "Bjarne Stroustrup",
+            "b": "Dennis Ritchie",
+            "c": "James Gosling",
+            "d": "Albert Einstein"
+        },
+        "2": {
+            "a": "1985",
+            "b": "1984",
+            "c": "1995",
+            "d": "1994"
+        },
+        "3": {
+            "a": "C",
+            "b": "Ada and ALGOL",
+            "c": "Modula-2 and Simula",
+            "d": "All the above"
+        },
+        "4": {
+            "a": "Java",
+            "b": "Perl, PHP and Python",
+            "c": "C# and D",
+            "d": "All the above"
+        },
+        "5": {
+            "a": ".cpp",
+            "b": ".cp",
+            "c": ".cpr",
+            "d": "All of the above"
+        },
+        "6": {
+            "a": "Simula47",
+            "b": "Simula67",
+            "c": "Simula87",
+            "d": "Simula57"
+        },
+        "7": {
+            "a": "Improved C",
+            "b": "Integrated C",
+            "c": "C with Simula",
+            "d": "C with classes"
+        },
+        "8": {
+            "a": "Identifiers",
+            "b": "Keywords",
+            "c": "Constraints",
+            "d": "Strings"
+        },
+        "9": {
+            "a": "-1",
+            "b": "1",
+            "c": "0",
+            "d": "None of the above"
+        }
+    }
+    
+]

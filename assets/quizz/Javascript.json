@@ -1,0 +1,88 @@
+[
+    {
+        "0": "Why JavaScript is called as Lightweight Programming Language ?",
+        "1": "JavaScript is also called as",
+        "2": "Local Browser used for validations on the Web Pages uses",
+        "3": "JavaScript code can be called by using",
+        "4": "Which of the following Attribute is used to include External JS code inside your HTML Document",
+        "5": "Which attribute is used to specifies that the script is executed when the page has finished parsing (only for external scripts) ?",
+        "6": "The _____ attribute is used to specify the character encoding used in an external script file.",
+        "7": "The async attribute can be set in the following ways",
+        "8": "We use _____ style comment to prevent showing JavaScript as Content in the old browsers.",
+        "9": "Which was the first browser to support JavaScript ?"
+    },
+    {
+        "0": {
+            "a": "because JS is client side scripting",
+            "b": "because JS is available free of cost.",
+            "c": "because we can add programming functionality inside JS",
+            "d": "because JS can provide programming functionality inside but up to certain extend."
+        },
+        "1": {
+            "a": "Server Side Scripting Language",
+            "b": "Client Side Scripting Language",
+            "c": "All of the above",
+            "d": "None of the above"
+        },
+        "2": {
+            "a": "JS",
+            "b": "Java",
+            "c": "HTML",
+            "d": "CSS"
+        },
+        "3": {
+            "a": "RMI",
+            "b": "Preprocessor",
+            "c": "Function/Method",
+            "d": "None of the above"
+        },
+        "4": {
+            "a": "link",
+            "b": "script",
+            "c": "ext",
+            "d": "src"
+        },
+        "5": {
+            "a": "defer",
+            "b": "type",
+            "c": "async",
+            "d": "parse"
+        },
+        "6": {
+            "a": "charset",
+            "b": "character",
+            "c": "type",
+            "d": "None of the above"
+        },
+        "7": {
+            "a": "<script async>",
+            "b": "<script async=''>",
+            "c": "<script async='async'>",
+            "d": "All of the above"
+        },
+        "8": {
+            "a": "C",
+            "b": "CSS",
+            "c": "JS",
+            "d": "HTML"
+        },
+        "9": {
+            "a": "Google Chrome",
+            "b": "Netscape",
+            "c": "Mozilla Firefox",
+            "d": "IE"
+        }
+    },
+    {
+        "0": "",
+        "1": "Client Side Scripting Language",
+        "2": "JS",
+        "3": "Function / Method",
+        "4": "src",
+        "5": "defer",
+        "6": "charset",
+        "7": "All of the above",
+        "8": "HTML",
+        "9": "Netscape"
+    }
+]

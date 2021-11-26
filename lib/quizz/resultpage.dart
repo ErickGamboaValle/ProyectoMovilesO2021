@@ -128,6 +128,7 @@ class _resultpageState extends State<resultpage> {
                     print(langname);
                     print(answers);
                     print(marks);
+                    print("${auth.currentUser!.uid}");
                     await FirebaseFirestore.instance
                         .collection("UserProfile")
                         .doc("${auth.currentUser!.uid}")
@@ -143,14 +144,16 @@ class _resultpageState extends State<resultpage> {
                     borderRadius: BorderRadius.circular(30.0),
                   ),
                   color: Color(0xFFFFCDD2),
-                  child: Text("Continue",
-                      style: TextStyle(
-                        color: Colors.black,
-                        letterSpacing: 1.5,
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'OpenSans',
-                      )),
+                  child: Text(
+                    "Continue",
+                    style: TextStyle(
+                      color: Colors.black,
+                      letterSpacing: 1.5,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'OpenSans',
+                    ),
+                  ),
                 ),
               ],
             ),
