@@ -142,18 +142,19 @@ class _loginpageState extends State<loginpage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        SizedBox(height: 500.0),
                         Text("Welcome back!",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontFamily: 'OpenSans',
                                 fontSize: 30.0,
                                 fontWeight: FontWeight.bold)),
-                        SizedBox(height: 30.0),
-                        _Email(),
-                        SizedBox(height: 30.0),
-                        _Password(),
-                        SizedBox(height: 30.0),
-                        Container(
+
+                        //_Email(),
+
+                        //_Password(),
+
+                        /*Container(
                           child: RaisedButton(
                             elevation: 5,
                             onPressed: () => print("Login Button"),
@@ -170,18 +171,18 @@ class _loginpageState extends State<loginpage> {
                                   fontFamily: 'OpenSans',
                                 )),
                           ),
-                        ),
-                        SizedBox(height: 30.0),
+                        ),*/
+
                         Column(
                           children: const <Widget>[
-                            Text(
+                            /*Text(
                               '- OR -',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w400,
                               ),
-                            ),
-                            SizedBox(height: 20.0),
+                            ),*/
+                            SizedBox(height: 30.0),
                             Text('Sign in with',
                                 style: TextStyle(
                                   color: Colors.white,
