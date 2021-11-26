@@ -12,18 +12,6 @@
         "9": "What is the correct value to return to the operating system upon the successful completion of a program ?"
     },
     {
-        "0": "All of the above",
-        "1": "Bjarne Stroustrup",
-        "2": "1985",
-        "3": "All the above",
-        "4": "All the above",
-        "5": ".cpp",
-        "6": "Simula67",
-        "7": "C with classes",
-        "8": "Identifiers",
-        "9": "0"
-    },
-    {
         "0": {
             "a": "general-purpose",
             "b": "procedural and functional",
@@ -84,6 +72,18 @@
             "c": "0",
             "d": "None of the above"
         }
+    },
+    {
+        "0": "All of the above",
+        "1": "Bjarne Stroustrup",
+        "2": "1985",
+        "3": "All the above",
+        "4": "All the above",
+        "5": ".cpp",
+        "6": "Simula67",
+        "7": "C with classes",
+        "8": "Identifiers",
+        "9": "0"
     }
     
 ]

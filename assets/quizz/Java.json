@@ -79,8 +79,8 @@
         "2": "String",
         "3": "int x = 5;",
         "4": "float x = 2.8f;",
-        "5": "Length();",
-        "6": "toUpperCase()",
+        "5": "length();",
+        "6": "toUpperCase();",
         "7": "==",
         "8": "{}",
         "9": "class"

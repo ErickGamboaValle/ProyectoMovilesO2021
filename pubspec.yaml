@@ -52,3 +52,7 @@ flutter:
     - assets/images/check.png
     - assets/images/kendalljenner.jpg
     - assets/quizz/Python.json
+    - assets/quizz/C++.json
+    - assets/quizz/Linux.json
+    - assets/quizz/JavaScript.json
+    - assets/quizz/Java.json

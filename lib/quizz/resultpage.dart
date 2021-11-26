@@ -129,13 +129,20 @@ class _resultpageState extends State<resultpage> {
                     print(answers);
                     print(marks);
                     print("${auth.currentUser!.uid}");
+
                     await FirebaseFirestore.instance
                         .collection("UserProfile")
                         .doc("${auth.currentUser!.uid}")
                         .update({
+                      "Grades.$langname": marks,
+                      "Answers.$langname": answers,
+                    });
+
+                    /*
+                        .update({
                       "Grades": {langname: marks},
                       "Answers": {langname: answers},
-                    });
+                    });*/
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
                       builder: (context) => homePage(),
                     ));
